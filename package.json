@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "./index.js localhost 3000"
+    "start": "nodemon ./index.js localhost 3000"
   },
   "keywords": [
     "pets",
@@ -17,6 +17,7 @@
     "1-desafio-node.js": "file:",
     "express": "^4.19.2",
     "mysql2": "^3.11.0",
+    "nodemon": "^3.1.4",
     "sequelize": "^6.37.3"
   }
 }
