@@ -5,22 +5,22 @@ const conn = require('./bd/conn.js')
 const Pet = bd.define('Pet', {
     name: {
         type: DataTypes.STRING,
-        allowNull: false,
+        required: true,
     },
 
     species: {
         type: DataTypes.STRING,
-        allowNull: false,
+        required: true,
     },
 
     carry: {
         type: DataTypes.STRING,
-        allowNull: false,
+        required: true,
     },
 
     weight: {
         type: DataTypes.FLOAT,
-        allowNull: false,
+        required: true,
     },
 
     date_of_birth: {
