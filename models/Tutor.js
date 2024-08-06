@@ -27,3 +27,5 @@ const Tutor = bd.define('Tutor', {
         required: true,
     }
 })
+
+module.exports = Tutor

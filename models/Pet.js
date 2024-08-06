@@ -27,3 +27,5 @@ const Pet = bd.define('Pet', {
         type: DataTypes.STRING,
     }
 })
+
+module.exports = Pet
