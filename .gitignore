@@ -1,3 +1,8 @@
+# Ignore o arquivo
 node_modules
+
+# Ignore o arquivo
 package.json
+
+# Ignore o arquivo
 package-lock.json
