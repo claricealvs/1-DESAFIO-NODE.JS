@@ -22,6 +22,7 @@ router.post("/tutor", (req, res) => {
   })
     .then(() => res.send("Tutor criado"))
     .catch((err) => console.log(err));
+  res.redirect("/tutors");
 });
 
 // atualiza tutor
@@ -47,7 +48,7 @@ router.post("/tutor/:id", (req, res) => {
     },
   })
     .then((tutor) => {
-      res.send("Tutor atualizado");
+      res.redirect("/tutors");
     })
     .catch((err) => console.log(err));
 });
