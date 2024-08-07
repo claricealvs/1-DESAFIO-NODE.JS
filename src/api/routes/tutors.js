@@ -2,11 +2,14 @@ const express = require("express");
 const router = express.Router();
 const Tutor = require("../models/Tutor.js");
 
+// retorna todos os tutores
 router.get("/tutors", async (req, res) => {
   const tutors = await Tutor.findAll({ raw: true });
   console.log("Tutores", tutors);
   res.status(201).json(tutors);
 });
+
+// retorna tutor por id
 
 // adiciona tutor
 router.post("/tutor", (req, res) => {
