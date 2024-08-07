@@ -20,6 +20,7 @@ const Tutor = bd.define("Tutor", {
 
   date_of_birth: {
     type: DataTypes.STRING,
+    required: true,
   },
 
   zip_code: {
