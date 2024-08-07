@@ -9,8 +9,6 @@ router.get("/tutors", async (req, res) => {
   res.status(201).json(tutors);
 });
 
-// retorna tutor por id
-
 // adiciona tutor
 router.post("/tutor", (req, res) => {
   const { name, phone, email, date_of_birth, zip_code } = req.body;
