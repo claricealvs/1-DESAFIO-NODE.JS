@@ -1,6 +1,6 @@
 const { DataTypes } = require("sequelize");
 
-const conn = require("../../conn.js");
+const bd = require("../../conn.js");
 
 const Pet = bd.define("Pet", {
   name: {

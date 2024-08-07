@@ -1,9 +1,9 @@
-const { Sequelize } = require('sequelize')
+const { Sequelize } = require("sequelize");
 
-const sequelize = new Sequelize('petsclinic', 'root', '', {
-  host: 'localhost',
-  dialect: 'mysql',
-})
+const sequelize = new Sequelize("petsclinic", "root", "", {
+  host: "localhost",
+  dialect: "mysql",
+});
 
 /*
 try {
@@ -14,4 +14,4 @@ try {
 }
 */
 
-module.exports = sequelize
+module.exports = sequelize;
