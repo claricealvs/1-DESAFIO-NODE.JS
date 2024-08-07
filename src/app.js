@@ -1,10 +1,10 @@
 const express = require("express");
 const app = express();
 
-const conn = require("../bd/conn");
+const conn = require("./conn.js");
 
-const Tutor = require("../models/Tutor");
-const Pet = require("../models/Pet");
+const Tutor = require("./api/models/Tutor.js");
+const Pet = require("./api/models/Pet.js");
 
 conn
   .sync()
