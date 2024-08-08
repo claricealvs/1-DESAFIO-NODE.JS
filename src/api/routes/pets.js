@@ -10,29 +10,35 @@ router.get("/pets", async (req, res) => {
 });
 
 // adiciona pet
-router.post("/pet", (req, res) => {
+router.post("/pet/:tutorId", async (req, res) => {
   const { name, species, carry, weight, date_of_birth } = req.body;
   console.log(req.body);
 
-  Pet.create({
+  const TutorId = req.params.tutorId;
+
+  const pet = {
+    TutorId,
     name,
     species,
     carry,
     weight,
     date_of_birth,
-  })
+  };
+
+  await Pet.create(pet)
     .then(() => res.send("Pet criado"))
     .catch((err) => console.log(err));
   res.json(req.body);
 });
 
 // atualiza pet
-router.post("/pet/:id", (req, res) => {
+router.post("/pet/:petId/tutor/:tutorId", (req, res) => {
   const { name, species, carry, weight, date_of_birth } = req.body;
   const id = req.params.id;
 
   // cria objeto com todas as propriedades de user
   const petData = {
+    id,
     name,
     species,
     carry,
