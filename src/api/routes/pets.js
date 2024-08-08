@@ -26,7 +26,7 @@ router.post("/pet/:tutorId", async (req, res) => {
   };
 
   await Pet.create(pet)
-    .then(() => res.send("Pet criado"))
+    .then(() => res.json(req.body))
     .catch((err) => console.log(err));
   res.json(req.body);
 });
@@ -61,12 +61,13 @@ router.post("/pet/:petId/tutor/:tutorId", (req, res) => {
 });
 
 // remove pet por id
-router.delete("/pet/:id", function (req, res) {
-  const id = req.params.id;
+router.delete("/pet/:petId/tutor/:tutorId", function (req, res) {
+  const petId = req.params.petId;
+  const tutorId = req.params.tutorId;
 
   Pet.destroy({
     where: {
-      id: id,
+      id: petId,
     },
   })
     .then((pet) => {
