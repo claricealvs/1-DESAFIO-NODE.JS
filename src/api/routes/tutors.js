@@ -39,9 +39,8 @@ router.post("/tutor", (req, res) => {
     date_of_birth,
     zip_code,
   })
-    .then(() => res.send("Tutor criado"))
+    .then(() => res.json(req.body))
     .catch((err) => console.log(err));
-  res.redirect("/tutors");
 });
 
 // atualiza tutor
