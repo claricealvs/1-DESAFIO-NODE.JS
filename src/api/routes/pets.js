@@ -52,3 +52,20 @@ router.post("/pet/:id", (req, res) => {
     })
     .catch((err) => console.log(err));
 });
+
+// remove pet por id
+router.delete("/pet/:id", function (req, res) {
+  const id = req.params.id;
+
+  Pet.destroy({
+    where: {
+      id: id,
+    },
+  })
+    .then((pet) => {
+      return res.status(204);
+    })
+    .catch((err) => console.log(err));
+});
+
+module.exports = router;
