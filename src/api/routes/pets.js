@@ -8,3 +8,20 @@ router.get("/pets", async (req, res) => {
   console.log("Pets", pets);
   res.status(201).json(pets);
 });
+
+// adiciona pet
+router.post("/pet", (req, res) => {
+  const { name, species, carry, wheight, date_of_birth } = req.body;
+  console.log(req.body);
+
+  Pet.create({
+    name,
+    species,
+    carry,
+    wheight,
+    date_of_birth,
+  })
+    .then(() => res.send("Pet criado"))
+    .catch((err) => console.log(err));
+  res.redirect("/pets");
+});
