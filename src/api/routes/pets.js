@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Tutor = require("../models/Pet.js");
+const Pet = require("../models/Pet.js");
 
 // retorna todos os pets
 router.get("/pets", async (req, res) => {
@@ -11,14 +11,14 @@ router.get("/pets", async (req, res) => {
 
 // adiciona pet
 router.post("/pet", (req, res) => {
-  const { name, species, carry, wheight, date_of_birth } = req.body;
+  const { name, species, carry, weight, date_of_birth } = req.body;
   console.log(req.body);
 
   Pet.create({
     name,
     species,
     carry,
-    wheight,
+    weight,
     date_of_birth,
   })
     .then(() => res.send("Pet criado"))
@@ -28,7 +28,7 @@ router.post("/pet", (req, res) => {
 
 // atualiza pet
 router.post("/pet/:id", (req, res) => {
-  const { name, species, carry, wheight, date_of_birth } = req.body;
+  const { name, species, carry, weight, date_of_birth } = req.body;
   const id = req.params.id;
 
   // cria objeto com todas as propriedades de user
@@ -36,7 +36,7 @@ router.post("/pet/:id", (req, res) => {
     name,
     species,
     carry,
-    wheight,
+    weight,
     date_of_birth,
   };
 
