@@ -34,11 +34,12 @@ router.post("/pet/:tutorId", async (req, res) => {
 // atualiza pet
 router.post("/pet/:petId/tutor/:tutorId", (req, res) => {
   const { name, species, carry, weight, date_of_birth } = req.body;
-  const id = req.params.id;
+
+  const petId = req.params.petId;
+  const tutorId = req.params.tutorId;
 
   // cria objeto com todas as propriedades de user
   const petData = {
-    id,
     name,
     species,
     carry,
@@ -50,7 +51,7 @@ router.post("/pet/:petId/tutor/:tutorId", (req, res) => {
 
   Pet.update(petData, {
     where: {
-      id: id,
+      id: petId,
     },
   })
     .then((pets) => {
