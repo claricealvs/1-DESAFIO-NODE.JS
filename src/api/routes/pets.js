@@ -23,7 +23,7 @@ router.post("/pet", (req, res) => {
   })
     .then(() => res.send("Pet criado"))
     .catch((err) => console.log(err));
-  res.redirect("/pets");
+  res.json(req.body);
 });
 
 // atualiza pet
@@ -48,7 +48,7 @@ router.post("/pet/:id", (req, res) => {
     },
   })
     .then((pets) => {
-      res.redirect("/pets");
+      res.json(req.body);
     })
     .catch((err) => console.log(err));
 });
@@ -63,7 +63,7 @@ router.delete("/pet/:id", function (req, res) {
     },
   })
     .then((pet) => {
-      return res.status(204);
+      res.status(204);
     })
     .catch((err) => console.log(err));
 });
