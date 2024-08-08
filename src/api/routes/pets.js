@@ -25,3 +25,30 @@ router.post("/pet", (req, res) => {
     .catch((err) => console.log(err));
   res.redirect("/pets");
 });
+
+// atualiza pet
+router.post("/pet/:id", (req, res) => {
+  const { name, species, carry, wheight, date_of_birth } = req.body;
+  const id = req.params.id;
+
+  // cria objeto com todas as propriedades de user
+  const petData = {
+    name,
+    species,
+    carry,
+    wheight,
+    date_of_birth,
+  };
+
+  console.log(petData);
+
+  Pet.update(petData, {
+    where: {
+      id: id,
+    },
+  })
+    .then((pets) => {
+      res.redirect("/pets");
+    })
+    .catch((err) => console.log(err));
+});
