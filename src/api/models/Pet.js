@@ -30,6 +30,7 @@ const Pet = bd.define("Pet", {
   },
 });
 
+Tutor.hasMany(Pet);
 Pet.belongsTo(Tutor);
 
 module.exports = Pet;
