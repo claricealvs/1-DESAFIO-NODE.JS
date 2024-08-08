@@ -81,7 +81,7 @@ router.delete("/tutor/:id", function (req, res) {
     },
   })
     .then((tutor) => {
-      return res.status(204);
+      res.json(res.status(200));
     })
     .catch((err) => console.log(err));
 });

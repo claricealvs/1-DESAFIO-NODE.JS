@@ -71,7 +71,7 @@ router.delete("/pet/:petId/tutor/:tutorId", function (req, res) {
     },
   })
     .then((pet) => {
-      res.status(204);
+      res.json(res.status(200));
     })
     .catch((err) => console.log(err));
 });
