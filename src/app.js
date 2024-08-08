@@ -22,7 +22,7 @@ bd.authenticate()
 
 // criar as tabelas
 bd.sync()
-  // .sync({ force: true }) apagar dados do banco
+  //.sync({ force: true }) apagar dados do banco
   .then(() => {
     app.listen(3000);
   })
