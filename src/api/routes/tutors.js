@@ -54,4 +54,19 @@ router.post("/tutor/:id", (req, res) => {
     .catch((err) => console.log(err));
 });
 
+// remove tutor por id
+router.delete("/tutor/:id", function (req, res) {
+  const id = req.params.id;
+
+  Tutor.destroy({
+    where: {
+      id: id,
+    },
+  })
+    .then((tutor) => {
+      return res.status(204);
+    })
+    .catch((err) => console.log(err));
+});
+
 module.exports = router;
