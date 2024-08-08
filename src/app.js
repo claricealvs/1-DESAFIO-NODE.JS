@@ -9,6 +9,7 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use("/", require("./api/routes/tutors.js"));
+app.use("/", require("./api/routes/pets.js"));
 
 // bd connection
 bd.authenticate()
