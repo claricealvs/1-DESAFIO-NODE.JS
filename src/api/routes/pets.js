@@ -67,6 +67,7 @@ router.delete("/pet/:petId/tutor/:tutorId", function (req, res) {
 
   Pet.destroy({
     where: {
+      TutorId: tutorId,
       id: petId,
     },
   })
