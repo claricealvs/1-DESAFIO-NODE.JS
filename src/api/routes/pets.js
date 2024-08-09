@@ -31,7 +31,7 @@ router.post("/pet/:tutorId", async (req, res) => {
 });
 
 // atualiza pet
-router.post("/pet/:petId/tutor/:tutorId", (req, res) => {
+router.put("/pet/:petId/tutor/:tutorId", (req, res) => {
   const { name, species, carry, weight, date_of_birth } = req.body;
 
   const petId = req.params.petId;
