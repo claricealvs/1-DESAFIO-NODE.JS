@@ -44,7 +44,7 @@ router.post("/tutor", (req, res) => {
 });
 
 // atualiza tutor
-router.post("/tutor/:id", (req, res) => {
+router.put("/tutor/:id", (req, res) => {
   const { name, phone, email, date_of_birth, zip_code } = req.body;
   const id = req.params.id;
 
