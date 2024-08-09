@@ -28,7 +28,6 @@ router.post("/pet/:tutorId", async (req, res) => {
   await Pet.create(pet)
     .then(() => res.json(req.body))
     .catch((err) => console.log(err));
-  res.json(req.body);
 });
 
 // atualiza pet
@@ -38,7 +37,7 @@ router.post("/pet/:petId/tutor/:tutorId", (req, res) => {
   const petId = req.params.petId;
   const tutorId = req.params.tutorId;
 
-  // cria objeto com todas as propriedades de user
+  // cria objeto com todas as propriedades de pet
   const petData = {
     name,
     species,
@@ -61,18 +60,18 @@ router.post("/pet/:petId/tutor/:tutorId", (req, res) => {
 });
 
 // remove pet por id
-router.delete("/pet/:petId/tutor/:tutorId", function (req, res) {
+router.delete("/pet/:petId", function (req, res) {
   const petId = req.params.petId;
-  const tutorId = req.params.tutorId;
+  //const tutorId = req.params.tutorId;
 
   Pet.destroy({
     where: {
-      TutorId: tutorId,
+      //TutorId: tutorId,
       id: petId,
     },
   })
     .then((pet) => {
-      res.json(res.status(200));
+      res.status(204).send();
     })
     .catch((err) => console.log(err));
 });
