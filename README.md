@@ -64,7 +64,7 @@ Aqui estão alguns dos principais endpoints disponíveis na API:
 
 - **Tutores**
 
-  - `GET /tutors`: Lista todos os tutores
+  - `GET /tutors`: Lista todos os tutores com seus respectivos pets
   - `POST /tutor`: Cria um novo tutor
   - `GET /tutor/:id`: Consulta um tutor pelo ID
   - `PUT /tutor/:id`: Atualiza os dados de um tutor
