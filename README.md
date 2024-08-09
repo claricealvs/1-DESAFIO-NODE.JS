@@ -6,7 +6,9 @@
 <img align="center" alt="Jv-csharp" height="40" width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg" /> 
 <img align="center" alt="Jv-csharp" height="40" width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodemon/nodemon-original.svg" /> 
 <img align="center" alt="Jv-csharp" height="40" width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original-wordmark.svg" />
+<img align="center" alt="Jv-csharp" height="40" width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" />
 <img align="center" alt="Jv-csharp" height="40" width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sequelize/sequelize-plain-wordmark.svg" />
+<img align="center" alt="Jv-csharp" height="40" width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swagger/swagger-original.svg" />
 </div>
 
 ## 🚀 Como Executar o Projeto
@@ -64,7 +66,7 @@ Aqui estão alguns dos principais endpoints disponíveis na API:
 
 - **Tutores**
 
-  - `GET /tutors`: Lista todos os tutores
+  - `GET /tutors`: Lista todos os tutores com seus respectivos pets
   - `POST /tutor`: Cria um novo tutor
   - `GET /tutor/:id`: Consulta um tutor pelo ID
   - `PUT /tutor/:id`: Atualiza os dados de um tutor

@@ -3,11 +3,12 @@ const router = express.Router();
 const Tutor = require("../models/Tutor.js");
 const Pet = require("../models/Pet.js");
 
-// retorna todos os tutores
+// retorna todos os tutores com seus pets
 router.get("/tutors", async (req, res) => {
-  const tutors = await Tutor.findAll({ raw: true });
-  console.log("Tutores", tutors);
-  res.status(201).json(tutors);
+  const tutors = await Tutor.findAll({
+    include: [{ model: Pet }],
+  });
+  res.status(200).json(tutors);
 });
 
 // retorna tutor por id
