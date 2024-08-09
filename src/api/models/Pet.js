@@ -30,7 +30,7 @@ const Pet = bd.define("Pet", {
   },
 });
 
-Tutor.hasMany(Pet);
+Tutor.hasMany(Pet, { onDelete: "CASCADE" }); // se um tutor for deletado, os pets irão juntos
 Pet.belongsTo(Tutor);
 
 module.exports = Pet;
