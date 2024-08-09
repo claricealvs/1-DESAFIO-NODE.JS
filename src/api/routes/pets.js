@@ -60,13 +60,13 @@ router.post("/pet/:petId/tutor/:tutorId", (req, res) => {
 });
 
 // remove pet por id
-router.delete("/pet/:petId", function (req, res) {
+router.delete("/pet/:petId/tutor/:tutorId", function (req, res) {
   const petId = req.params.petId;
-  //const tutorId = req.params.tutorId;
+  const tutorId = req.params.tutorId;
 
   Pet.destroy({
     where: {
-      //TutorId: tutorId,
+      TutorId: tutorId,
       id: petId,
     },
   })

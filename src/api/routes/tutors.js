@@ -72,8 +72,10 @@ router.post("/tutor/:id", (req, res) => {
 });
 
 // remove tutor por id
-router.delete("/tutor/:id", function (req, res) {
+router.delete("/tutor/:id", async (req, res) => {
   const id = req.params.id;
+
+  await Pet.destroy({ where: { TutorId: id } });
 
   Tutor.destroy({
     where: {
@@ -81,7 +83,7 @@ router.delete("/tutor/:id", function (req, res) {
     },
   })
     .then((tutor) => {
-      res.status(200);
+      res.status(204).send();
     })
     .catch((err) => console.log(err));
 });
