@@ -48,7 +48,7 @@ router.put("/tutor/:id", (req, res) => {
   const { name, phone, email, date_of_birth, zip_code } = req.body;
   const id = req.params.id;
 
-  // cria objeto com todas as propriedades de user
+  // cria objeto com todas as propriedades de tutor
   const tutorData = {
     id,
     name,
