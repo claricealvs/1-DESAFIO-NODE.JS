@@ -63,8 +63,6 @@ const sequelize = new Sequelize("petsclinic", "root", "", {
 
 Aqui estão os endpoints disponíveis na API:
 
-- **Tutores**
-
 <details>
 <summary> GET </summary>
 
