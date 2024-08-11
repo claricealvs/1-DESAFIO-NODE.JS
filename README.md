@@ -55,25 +55,126 @@ const sequelize = new Sequelize("petsclinic", "root", "", {
   ```
 - O servidor inciará na porta:3000 - acesse <http://localhost:3000>
 
-5. **Acesse a API no Swagger**
+## 🛠️ ferramenta para testes
 
-   A aplicação estará disponível no endereço:
-   `http://localhost:`
+- Postman
 
 ## 🌐 Endpoints da API
 
-Aqui estão alguns dos principais endpoints disponíveis na API:
+Aqui estão os endpoints disponíveis na API:
 
 - **Tutores**
 
-  - `GET /tutors`: Lista todos os tutores com seus respectivos pets
-  - `POST /tutor`: Cria um novo tutor
-  - `GET /tutor/:id`: Consulta um tutor pelo ID
-  - `PUT /tutor/:id`: Atualiza os dados de um tutor
-  - `DELETE /tutor/:id`: Remove um tutor
+<details>
+<summary> `GET` </summary>
 
-- **Pets**
-  - `GET /pets`: Lista todos os pets
-  - `POST /pet/:tutorId`: Cria um pet e adiciona um tutor a ele
-  - `PUT /pet/:petId/tutor/:tutorId`: Atualiza os dados de um pet
-  - `DELETE //pet/:petId/tutor/:tutorId`: Remove um pet de um tutor
+Listar todos os tutores `/tutors`. Exemplo de resposta:
+
+```JSON
+[
+  {
+    "id": 1,
+    "name": "Clarice",
+    "phone": "999445566",
+    "email": "clarice@gmail.com",
+    "date_of_birth": "29/04/2003",
+    "zip_code": "7580000",
+    "Pets": [
+      {
+        "id": 1,
+        "name": "Maddie",
+        "species": "cat",
+        "carry": "m",
+        "weight": 2,
+        "date_of_birth": "03/09/2018"
+      }
+    ]
+  }
+]
+```
+
+Listar todos os pets `/pets`. Exemplo de resposta:
+
+```JSON
+{
+  name: 'Coraline',
+  species: 'Bunny',
+  carry: 'p',
+  weight: '2',
+  date_of_birth: '08/07/2023',
+  "TutorId": 1
+}
+```
+
+</details>
+
+<details>
+<summary> `POST` </summary>
+
+`/tutor` Exemplo do body de requisição (todos os itens são obrigatórios):
+
+```JSON
+{
+    "name": "John",
+    "date_of_birth": "11/01/2005",
+    "phone": "999664422",
+    "email": "john@gmail.com",
+    "zip_code": "75790000"
+}
+```
+
+`/pet/:tutorId` Exemplo do body de requisição (todos os itens são obrigatórios):
+
+```JSON
+{
+    "name": "Butter",
+    "species": "Dog",
+    "carry": "g",
+    "weight": "10",
+    "date_of_birth": "23/06/2016"
+}
+```
+
+</details>
+
+<details>
+<summary> `PUT` </summary>
+
+`/tutor/:id` Exemplo do body de requisição (todos os itens são obrigatórios):
+
+```JSON
+{
+    "name": "John",
+    "date_of_birth": "11/01/2005",
+    "phone": "969235485",
+    "email": "john@gmail.com",
+    "zip_code": "75790000"
+}
+```
+
+`/pet/:petId/tutor/:tutorId` Exemplo do body de requisição (todos os itens são obrigatórios):
+
+```JSON
+{
+    "name": "Butter",
+    "species": "Dog",
+    "carry": "g",
+    "weight": "8",
+    "date_of_birth": "23/06/2016"
+}
+```
+
+</details>
+
+<details>
+<summary> `DELETE` </summary>
+
+`/tutor/:id`
+
+> status code 204
+
+`/pet/:petId/tutor/:tutorId`
+
+> status code 204
+
+</details>
