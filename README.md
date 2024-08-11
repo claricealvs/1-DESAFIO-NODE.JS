@@ -66,7 +66,7 @@ Aqui estão os endpoints disponíveis na API:
 - **Tutores**
 
 <details>
-<summary> `GET` </summary>
+<summary> GET </summary>
 
 Listar todos os tutores `/tutors`. Exemplo de resposta:
 
@@ -97,11 +97,11 @@ Listar todos os pets `/pets`. Exemplo de resposta:
 
 ```JSON
 {
-  name: 'Coraline',
-  species: 'Bunny',
-  carry: 'p',
-  weight: '2',
-  date_of_birth: '08/07/2023',
+  "name": "Coraline",
+  "species": "Bunny",
+  "carry": "p",
+  "weight": "2",
+  "date_of_birth": "08/07/2023",
   "TutorId": 1
 }
 ```
@@ -109,7 +109,7 @@ Listar todos os pets `/pets`. Exemplo de resposta:
 </details>
 
 <details>
-<summary> `POST` </summary>
+<summary> POST </summary>
 
 `/tutor` Exemplo do body de requisição (todos os itens são obrigatórios):
 
@@ -138,7 +138,7 @@ Listar todos os pets `/pets`. Exemplo de resposta:
 </details>
 
 <details>
-<summary> `PUT` </summary>
+<summary> PUT </summary>
 
 `/tutor/:id` Exemplo do body de requisição (todos os itens são obrigatórios):
 
@@ -167,7 +167,7 @@ Listar todos os pets `/pets`. Exemplo de resposta:
 </details>
 
 <details>
-<summary> `DELETE` </summary>
+<summary> DELETE </summary>
 
 `/tutor/:id`
 
