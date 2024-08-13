@@ -28,7 +28,7 @@ https://github.com/claricealvs/1-DESAFIO-NODE.JS.git
 cd 1-DESAFIO-NODE.JS
 ```
 
-2. Instale as Dependências
+2. **Instale as Dependências**
 
 ```bash
 npm install
