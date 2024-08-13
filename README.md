@@ -94,14 +94,26 @@ Listar todos os tutores `/tutors`. Exemplo de resposta:
 Listar todos os pets `/pets`. Exemplo de resposta:
 
 ```JSON
-{
-  "name": "Coraline",
-  "species": "Bunny",
-  "carry": "p",
-  "weight": "2",
-  "date_of_birth": "08/07/2023",
-  "TutorId": 1
-}
+[
+  {
+    "id": 1,
+    "name": "Maddie",
+    "species": "Cat",
+    "carry": "M",
+    "weight": 2.5,
+    "date_of_birth": "03/11/2018",
+    "TutorId": 1
+  },
+  {
+    "id": 12,
+    "name": "Coraline",
+    "species": "Bunny",
+    "carry": "p",
+    "weight": 2,
+    "date_of_birth": "08/07/2023",
+    "TutorId": 1
+    }
+]
 ```
 
 </details>
@@ -125,11 +137,12 @@ Listar todos os pets `/pets`. Exemplo de resposta:
 
 ```JSON
 {
-    "name": "Butter",
-    "species": "Dog",
-    "carry": "g",
-    "weight": "10",
-    "date_of_birth": "23/06/2016"
+  "TutorId": "1",
+  "name": "Luna",
+  "species": "Dog",
+  "carry": "m",
+  "weight": "4",
+  "date_of_birth": "10/02/2024"
 }
 ```
 
@@ -142,11 +155,12 @@ Listar todos os pets `/pets`. Exemplo de resposta:
 
 ```JSON
 {
-    "name": "John",
-    "date_of_birth": "11/01/2005",
-    "phone": "969235485",
-    "email": "john@gmail.com",
-    "zip_code": "75790000"
+  "id": "8",
+  "name": "John",
+  "phone": "969235485",
+  "email": "john@gmail.com",
+  "date_of_birth": "21/03/2000",
+  "zip_code": "75790000"
 }
 ```
 
