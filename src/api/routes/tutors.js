@@ -67,7 +67,7 @@ router.put("/tutor/:id", (req, res) => {
     },
   })
     .then((tutor) => {
-      res.json(req.body);
+      res.json(tutorData);
     })
     .catch((err) => console.log(err));
 });

@@ -26,7 +26,7 @@ router.post("/pet/:tutorId", async (req, res) => {
   };
 
   await Pet.create(pet)
-    .then(() => res.json(req.body))
+    .then(() => res.json(pet))
     .catch((err) => console.log(err));
 });
 
@@ -54,7 +54,7 @@ router.put("/pet/:petId/tutor/:tutorId", (req, res) => {
     },
   })
     .then((pets) => {
-      res.json(req.body);
+      res.json(petData);
     })
     .catch((err) => console.log(err));
 });
