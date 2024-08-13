@@ -1,0 +1,224 @@
+openapi: 3.0.0
+info:
+  title: PetsClinic API
+  description: API para gerenciamento de uma Clínica Veterinária.
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000
+paths:
+  /pets:
+    get:
+      tags:
+        - Pets
+      summary: Lista todos os pets
+      responses:
+        "200":
+          description: Sucesso
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Pet"
+
+  /pet/{tutorId}:
+    post:
+      tags:
+        - Pets
+      summary: Adiciona um novo pet a um tutor
+      parameters:
+        - in: path
+          name: tutorId
+          schema:
+            type: integer
+          required: true
+          description: ID do tutor
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Pet"
+      responses:
+        "201":
+          description: Pet criado com sucesso
+
+  /pet/{petId}/tutor/{tutorId}:
+    put:
+      tags:
+        - Pets
+      summary: Atualiza o tutor de um pet existente
+      parameters:
+        - in: path
+          name: petId
+          schema:
+            type: integer
+          required: true
+          description: ID do pet
+        - in: path
+          name: tutorId
+          schema:
+            type: integer
+          required: true
+          description: ID do tutor
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Pet"
+      responses:
+        "200":
+          description: Pet atualizado com sucesso
+        "404":
+          description: Pet ou Tutor não encontrado
+
+    delete:
+      tags:
+        - Pets
+      summary: Deleta um pet pelo ID
+      parameters:
+        - in: path
+          name: petId
+          schema:
+            type: integer
+          required: true
+          description: ID do pet
+        - in: path
+          name: tutorId
+          schema:
+            type: integer
+          required: true
+          description: ID do tutor
+      responses:
+        "204":
+          description: Pet deletado com sucesso
+        "404":
+          description: Pet não encontrado
+
+  /tutors:
+    get:
+      tags:
+        - Tutors
+      summary: Lista todos os tutores com seus respectivos pets
+      responses:
+        "200":
+          description: Sucesso
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Tutor"
+
+  /tutor:
+    post:
+      tags:
+        - Tutors
+      summary: Adiciona um novo tutor
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Tutor"
+      responses:
+        "201":
+          description: Tutor criado com sucesso
+
+  /tutor/{id}:
+    get:
+      tags:
+        - Tutors
+      summary: Busca um tutor pelo ID
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+          description: ID do tutor
+      responses:
+        "200":
+          description: Sucesso
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Tutor"
+
+    put:
+      tags:
+        - Tutors
+      summary: Atualiza um tutor existente
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+          description: ID do tutor
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Tutor"
+      responses:
+        "200":
+          description: Tutor atualizado com sucesso
+        "404":
+          description: Tutor não encontrado
+
+    delete:
+      tags:
+        - Tutors
+      summary: Deleta um tutor pelo ID
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+          description: ID do tutor
+      responses:
+        "204":
+          description: Tutor deletado com sucesso
+        "404":
+          description: Tutor não encontrado
+
+components:
+  schemas:
+    Pet:
+      type: object
+      properties:
+        name:
+          type: string
+        species:
+          type: string
+        carry:
+          type: string
+        weight:
+          type: number
+        date_of_birth:
+          type: string
+        tutor_id:
+          type: integer
+          description: ID do tutor responsável pelo pet
+    Tutor:
+      type: object
+      properties:
+        name:
+          type: string
+        phone:
+          type: string
+        email:
+          type: string
+        date_of_birth:
+          type: string
+        zip_code:
+          type: string
+        pets:
+          type: array
+          items:
+            $ref: "#/components/schemas/Pet"
+          description: Lista de pets pertencentes ao tutor
