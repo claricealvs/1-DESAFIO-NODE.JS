@@ -11,6 +11,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/", require("./api/routes/tutors.js"));
 app.use("/", require("./api/routes/pets.js"));
 
+const swaggerUi = require("swagger-ui-express");
+const swagger = require("../swagger.json");
+
+app.use("/docs", swaggerUi.serve, swaggerUi.setup(swagger));
+
 // bd connection
 bd.authenticate()
   .then(() => {
