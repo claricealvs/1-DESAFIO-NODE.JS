@@ -116,6 +116,32 @@ Listar todos os pets `/pets`. Exemplo de resposta:
 ]
 ```
 
+Listar um tutor por id `/tutor/:id`. Exemplo de resposta:
+
+```JSON
+{
+  "tutor": {
+      "id": 8,
+      "name": "John",
+      "phone": "969235485",
+      "email": "john@gmail.com",
+      "date_of_birth": "21/03/2000",
+      "zip_code": "75790000",
+      "Pets": [
+        {
+          "id": 13,
+          "name": "Butter",
+          "species": "Dog",
+          "carry": "g",
+          "weight": 8,
+          "date_of_birth": "23/06/2016",
+          "TutorId": 8
+        }
+      ]
+  }
+}
+```
+
 </details>
 
 <details>
