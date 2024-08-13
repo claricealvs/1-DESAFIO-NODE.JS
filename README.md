@@ -57,9 +57,9 @@ const sequelize = new Sequelize("petsclinic", "root", "", {
 
 5. **Acesse a API no Swagger**
 
-A aplicação estará disponível no endereço:
+- A aplicação estará disponível no endereço:
 
-http://localhost:3000/docs/
+  http://localhost:3000/docs/
 
 ## 🛠️ ferramenta para testes
 
